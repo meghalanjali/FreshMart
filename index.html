@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -181,6 +180,19 @@ text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
+#search{
+    padding:8px;
+    width:250px;
+    border-radius:5px;
+    border:1px solid gray;
+    margin-right:20px;
+}
+
+#cartCount{
+    font-size:20px;
+    font-weight:bold;
+}
+
 /* FOOTER */
 
 footer{
@@ -191,48 +203,6 @@ padding:20px;
 }
 
 </style>
-    <title>FreshMart</title>
-    <style>
-        body{
-            font-family: Arial;
-            background:#f2f2f2;
-        }
-        h1{
-            text-align:center;
-            background:green;
-            color:white;
-            padding:15px;
-        }
-        .products{
-            display:grid;
-            grid-template-columns: repeat(4,1fr);
-            gap:20px;
-            padding:20px;
-        }
-        .card{
-            background:white;
-            padding:15px;
-            border-radius:10px;
-            box-shadow:0 0 10px gray;
-            text-align:center;
-        }
-        .card img{
-            width:150px;
-            height:150px;
-        }
-        .price{
-            color:green;
-            font-size:20px;
-            font-weight:bold;
-        }
-        button{
-            background:orange;
-            border:none;
-            padding:10px;
-            border-radius:5px;
-            cursor:pointer;
-        }
-    </style>
 </head>
 
 <body>
@@ -250,6 +220,8 @@ padding:20px;
 
 <div class="container">
 
+<nav <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
+<span id="cartCount">🛒 0</span></nav>
 
 <nav style="display:flex; justify-content:space-between; padding:15px; background:#222; color:white;">
    <h2>FreshMart</h2>
@@ -269,44 +241,32 @@ padding:20px;
 
    <div style="display:flex; justify-content:center; gap:20px;">
 
-      <div>
-         <img src= "https://media.istockphoto.com/id/153737841/photo/rice.jpg?s=612x612&w=0&k=20&c=lfO7iLT0UsDDzra0uBOsN1rvr2d5OEtrG2uwbts33_c="width="200">
-         <h3>Rice</h3>
-         
-      </div>
-<h1>FreshMart Online Store</h1>
-
-      <div>
-         <img src="https://cdn.shopaccino.com/refresh/articles/edible-oils-418048_l.jpg?v=591" width="200">
+      <div class="card">
+         <img src="https://cdn.shopaccino.com/refresh/articles/edible-oils-418048_l.jpg?v=591" width="100">
          <h3>Cooking Oil</h3>
+      <button>Add to Cart</button>
          
       </div>
-<div class="products">
 
-      <div>
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxtDVvuJ9K9Ls6FEtZ1KUB6bgEDthsIDoXXg&s" width="200">
+      <div class="card">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxtDVvuJ9K9Ls6FEtZ1KUB6bgEDthsIDoXXg&s" width="100">
          <h3>Fresh Fruits</h3>
+      <button>Add to Cart</button>
         
       </div>
      
-    <div>
-<img src="https://media.istockphoto.com/id/544807136/photo/various-fresh-dairy-products.jpg?s=612x612&w=0&k=20&c=U5T70bi24itoTDive1CVonJbJ97ChyL2Pz1I2kOoSRo=" width="200">
+    <div class="card">
+<img src="https://media.istockphoto.com/id/544807136/photo/various-fresh-dairy-products.jpg?s=612x612&w=0&k=20&c=U5T70bi24itoTDive1CVonJbJ97ChyL2Pz1I2kOoSRo=" width="100">
 <h3>dairy-products</h3>
+<button>Add to Cart</button>
    </div>
   
-    <div>
+    <div class="card">
    <img src=" https://i-media.vyaparify.com/vcards/blogs/109646/HOME-CARE-ITEMS.jpeg"width="200">
    <h3>household items</h3>
-    <div class="card">
-        <img src="https://via.placeholder.com/150">
-        <h3>Apple</h3>
-        <p class="price">₹120 / kg</p>
-        <button>Add to Cart</button>
+    <button>Add to Cart</button>
     </div>
 
-
-
-   </div>
 </section>
 
 <section id="products" class="section">
@@ -318,11 +278,6 @@ padding:20px;
         <div class="card">🍪 Snacks & Biscuits</div>
         <div class="card">🧼 Household Items</div>
         <div class="card">🥫 Packaged Foods</div>
-    <div class="card">
-        <img src="https://via.placeholder.com/150">
-        <h3>Milk</h3>
-        <p class="price">₹60</p>
-        <button>Add to Cart</button>
     </div>
 </section>
 
@@ -332,23 +287,11 @@ padding:20px;
 <h3>⚡ Fast Delivery</h3>
 <p>Get groceries delivered quickly.</p>
 </div>
-    <div class="card">
-        <img src="https://via.placeholder.com/150">
-        <h3>Bread</h3>
-        <p class="price">₹40</p>
-        <button>Add to Cart</button>
-    </div>
 
 <div class="feature">
 <h3>🥗 100% Fresh</h3>
 <p>Direct from farms.</p>
 </div>
-    <div class="card">
-        <img src="https://via.placeholder.com/150">
-        <h3>Rice</h3>
-        <p class="price">₹55 / kg</p>
-        <button>Add to Cart</button>
-    </div>
 
 <div class="feature">
 <h3>💰 Best Prices</h3>
@@ -378,6 +321,29 @@ padding:20px;
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919657433999">💬</a>
+
+<script>
+let count = 0;
+
+function addToCart(){
+    count++;
+    document.getElementById("cartCount").innerText = "🛒 " + count;
+}
+
+function searchProduct(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for(let i=0;i<cards.length;i++){
+        let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+        if(title.includes(input)){
+            cards[i].style.display = "block";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>
